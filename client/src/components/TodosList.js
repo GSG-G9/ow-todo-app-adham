@@ -21,7 +21,12 @@ function TodosList() {
 
   return (
     <ul>
-      {todos.map(todo => <li key={todo.id}>{todo.title}</li>)}
+      {todos.map(todo => (
+        <div key={todo.id}>
+          <input type="checkbox" id={todo.id} name={todo.title}/>
+          <label htmlFor={todo.id}>{todo.title}</label>
+        </div>
+      ))}
     </ul>
   )
 };
